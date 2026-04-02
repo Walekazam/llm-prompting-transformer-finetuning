@@ -1,33 +1,12 @@
 # LLM Prompting & Transformer Fine-Tuning for Text Classification
 
-A comparative NLP study that benchmarks four classification approaches — logistic regression, fine-tuned transformer, zero-shot LLM, and few-shot LLM — on a Tang Dynasty poetry dataset, alongside few-shot LLM poem generation evaluated by a fine-tuned classifier.
+A comparative NLP study that benchmarks four classification approaches (logistic regression, fine-tuned transformer, zero-shot LLM, and few-shot LLM) on a Tang Dynasty poetry dataset, alongside few-shot LLM poem generation evaluated by a fine-tuned classifier.
 
 ## Overview
 
 This project explores the full spectrum of modern NLP classification techniques on a literary dataset of 97 bilingual Tang Dynasty poems. Each poem is labeled as **nature-themed** (landscape, seasons, moon, etc.) or **other**. The project then extends into generative AI, using few-shot prompting to generate synthetic poems and evaluating them with the fine-tuned classifier.
 
 **Key question:** How do prompt engineering, fine-tuning, and classical ML compare on a small, domain-specific text classification task?
-
----
-
-## Pipeline Summary
-
-```
-Raw JSON data (97 Tang poems, bilingual)
-        │
-        ▼
-Data preprocessing & binary labeling (nature / other)
-        │
-        ├──▶ Logistic Regression (BoW baseline)
-        │
-        ├──▶ Fine-tuned Transformer (all-MiniLM-L6-v2)
-        │
-        ├──▶ Zero-shot LLM classification (Gemma 3 via Ollama)
-        │
-        ├──▶ Few-shot LLM classification (FewShotPromptBuilder)
-        │
-        └──▶ Few-shot poem generation → evaluated by fine-tuned classifier
-```
 
 ---
 
@@ -117,18 +96,7 @@ ollama serve  # start the local server
 
 **Run the notebook**
 
-Open `ps4_transformers_prompting.ipynb` and run all cells sequentially. GPU is not required — all training is configured for CPU.
-
----
-
-## Project Structure
-
-```
-├── ps4_transformers_prompting.ipynb   # Full experiment notebook
-├── results/
-│   └── best_minilm_classifier/        # Saved fine-tuned model checkpoint
-└── README.md
-```
+Open ipynb file and run all cells sequentially.
 
 ---
 
