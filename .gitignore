@@ -1,0 +1,13 @@
+# Model checkpoints — too large to commit
+results/best_minilm_classifier/
+*.pt
+*.pth
+
+# Python
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Misc
+.DS_Store
+logs/
